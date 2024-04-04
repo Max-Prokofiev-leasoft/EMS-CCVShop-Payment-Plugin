@@ -1,0 +1,9 @@
+RewriteEngine On
+#RewriteRule ^paymethods$ /Paymethods.php [L,NC]
+RewriteRule ^install$ install.php [L,NC]
+RewriteRule ^uninstall$ uninstall.php [L,NC]
+RewriteRule ^handshake$ handshake.php [L,NC]
+RewriteRule ^transactions$ Services/Scripts/createTransaction.php [L,NC]
+RewriteRule ^webhook$ Services/Scripts/Webhook.php [L,NC]
+RewriteRule ^transactions/(.*)$ Services/Scripts/getStatusTransaction.php?transaction_id=$1 [L,NC]
+RewriteRule ^order_status_changed$ Services/Scripts/CCVShopStatusChangeWebhook.php [L,NC]
