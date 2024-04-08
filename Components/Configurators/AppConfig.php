@@ -13,7 +13,7 @@ class AppConfig
      * This Uri is used in the update schema example
      * Note: Remove possible trailing slashes.
      */
-    const AppUri = 'https://fine-emus-bake.loca.lt';
+    const AppUri = 'https://wise-towns-sneeze.loca.lt';
 
     /**
      * This contains a secret key which is unique for this App.

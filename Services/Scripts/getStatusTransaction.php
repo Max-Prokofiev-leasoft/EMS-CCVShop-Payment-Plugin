@@ -11,7 +11,7 @@ try {
     $oTransactionFactory = new TransactionCollection();
 
     Log::WriteStartCall(__FILE__);
-    $sResponse = $oTransactionFactory->GetStatus(filter_input(INPUT_GET,'transaction_id', FILTER_SANITIZE_STRING));
+    $sResponse = $oTransactionFactory->GetStatus(filter_input(INPUT_GET,'transaction_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 
     echo $sResponse;
     Log::WriteEndCall(__FILE__);

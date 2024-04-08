@@ -212,6 +212,8 @@ trait AppConnectorTrait
 
     /**
      * Update Credentials
+     * @throws InvalidCredentialException
+     * @throws \Exception
      */
     protected function EditCredential()
     {
