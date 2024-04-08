@@ -25,7 +25,7 @@ trait AppConnectorTrait
     /**
      * @var Credential Credential Contains the credentials. Used for example purposes only
      */
-    protected Credential $Credential;
+    protected $Credential;
 
     /**
      * @var null|int Contains the ID
@@ -212,8 +212,6 @@ trait AppConnectorTrait
 
     /**
      * Update Credentials
-     * @throws InvalidCredentialException
-     * @throws \Exception
      */
     protected function EditCredential()
     {

@@ -81,7 +81,7 @@ class PluginGateway extends OrderBuilder
          */
         $api_public = filter_input(INPUT_GET, 'api_public', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        $_GET['api_public'] = (isset($_GET['api_public']) && is_string($_GET['api_public'])) ? filter_var($_GET['api_public'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
+        $_GET['api_public'] = (isset($_GET['api_public']) && is_string($_GET['api_public'])) ? filter_input(INPUT_GET,'api_public', FILTER_SANITIZE_FULL_SPECIAL_CHARS) : null;
         try {
             Log::WriteStartCall(__FILE__);
             $xHash = filter_input(INPUT_GET, 'x-hash', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -126,7 +126,7 @@ class PluginGateway extends OrderBuilder
     {
         try {
             // Install app when clicked Install button with $_POST data
-            $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
 
             $this->EditCredential();
 

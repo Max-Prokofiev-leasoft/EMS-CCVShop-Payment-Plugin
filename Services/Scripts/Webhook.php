@@ -23,8 +23,8 @@ class Webhook
     {
         try {
             Log::Write(__FUNCTION__);
-            $ccvshop_order_number = filter_input(INPUT_GET, 'order_number', FILTER_SANITIZE_STRING);
-            $store_id = filter_input(INPUT_GET, 'storeId', FILTER_SANITIZE_STRING);
+            $ccvshop_order_number = filter_input(INPUT_GET, 'order_number', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $store_id = filter_input(INPUT_GET, 'storeId', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $data = json_decode(file_get_contents("php://input"), true);
             if (!is_array($data)) {

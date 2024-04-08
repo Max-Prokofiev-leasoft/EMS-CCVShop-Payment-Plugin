@@ -1,7 +1,0 @@
-2024-04-03 09:46:34 [                   BeforeHandshake] -           DEBUG - [{"api_public":"!NE3JoNs6Cq1oWh!d2OUKf*EpSKaqrW9","api_secret":"MFtcqtlTUiO0t_OwfAt79C*LJw46C0Qi","api_root":"https:\/\/gingerpaymentstest.ccvshop.nl","return_url":"https:\/\/gingerpaymentstest.ccvshop.nl\/onderhoud\/AdminItems\/AppStore\/AppStore.Return.php?Id=12970"}]
-2024-04-03 09:46:34 [                        START CALL] -                 - [/Applications/MAMP/htdocs/Components/Classes/PluginGateway.php]
-2024-04-03 09:46:34 [                         Handshake] -           INPUT - [{"api_public":"!NE3JoNs6Cq1oWh!d2OUKf*EpSKaqrW9","api_secret":"MFtcqtlTUiO0t_OwfAt79C*LJw46C0Qi","api_root":"https:\/\/gingerpaymentstest.ccvshop.nl","return_url":"https:\/\/gingerpaymentstest.ccvshop.nl\/onderhoud\/AdminItems\/AppStore\/AppStore.Return.php?Id=12970"}]
-2024-04-03 09:46:34 [                ProcessCredentials] -           START - []
-2024-04-03 09:46:34 [                         Handshake] -           ERROR - [HTTP/1.1 500 Internal Server Error. Calculated hash does not match the hash included in the headers.]
-2024-04-03 09:46:34 [                          END CALL] -                 - [/Applications/MAMP/htdocs/Components/Classes/PluginGateway.php]
-

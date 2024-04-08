@@ -35,7 +35,7 @@ class CCVShopStatusChangeWebhook
             if (!empty($requestBody)) {
                 Log::Write(__FUNCTION__, 'CHECK STATUS', 'Required : 6, retrieved : '.$requestBody['status']);
                 if ($requestBody['status'] == 5) {
-                    $this->storeId = filter_input(INPUT_GET, 'storeId', FILTER_SANITIZE_STRING);
+                    $this->storeId = filter_input(INPUT_GET, 'storeId', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                     $this->credentials = Data_Credential::GetOneByStoreId($this->storeId);
                     $this->ship_an_order($requestBody);
                 }
