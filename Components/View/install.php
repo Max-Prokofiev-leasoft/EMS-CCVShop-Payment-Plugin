@@ -33,7 +33,7 @@ if (!$ginger_api_key) {
             echo '<br />';
         } ?>
 
-        <form action="<?php echo BankConfig::AppInstallUri; ?>" method="post" onsubmit="showInstallingMessage()">
+        <form action="<?php echo BankConfig::AppInstallUri; ?>" method="post" onsubmit="showInstallingMessage(event)">
             <input type="hidden" name="language" id="language" value="<?php echo $language ?>"/>
             <input type="hidden" name="api_public" id="api_public" value="<?php echo $api_public ?>"/>
             <input type="hidden" name="install_type" id="install_type" value="app_psp"/>
@@ -69,13 +69,21 @@ if (!$ginger_api_key) {
                 <button id="saveButton" name="action" class="btn btn-success" style="margin-top: 20px" value='update'>Save</button>
             <?php } ?>
         </form>
-        <div id="installingMessage" style="display: none; color: green; margin-top: 10px;">Plugin installing...</div>
     </div>
 </div>
 
 <script>
-    function showInstallingMessage() {
-        document.getElementById('installingMessage').style.display = 'block';
+    function showInstallingMessage(event) {
+        var installButton = document.getElementById('installButton');
+        var saveButton = document.getElementById('saveButton');
+
+        if (installButton && installButton.value === 'install') {
+            installButton.innerHTML = 'Installing...';
+        }
+
+        if (saveButton && saveButton.value === 'update') {
+            saveButton.innerHTML = 'Saving...';
+        }
     }
 </script>
 </body>
