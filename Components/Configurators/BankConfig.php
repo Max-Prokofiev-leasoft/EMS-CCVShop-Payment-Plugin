@@ -8,5 +8,5 @@ class BankConfig extends GingerConfig
 
     const BANK_PAYMENT_LABEL_PREFIX = 'EMSPAY';
 
-    const BANK_API_ENDPOINT = 'https://api.online.emspay.eu';
+    const BANK_API_ENDPOINT = 'https://api.dev.gingerpayments.com/';
 }

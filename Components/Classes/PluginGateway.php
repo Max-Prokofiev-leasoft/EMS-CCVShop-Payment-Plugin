@@ -126,7 +126,7 @@ class PluginGateway extends OrderBuilder
     {
         try {
             // Install app when clicked Install button with $_POST data
-            $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
+            $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $this->EditCredential();
 
@@ -139,11 +139,36 @@ class PluginGateway extends OrderBuilder
             Log::Write('Install', 'OUTPUT', 'Location: ' . $this->GetCredential()->GetReturnUrl());
             Log::WriteEndCall(__FILE__);
 
-
-            header('Location: ' . $this->GetCredential()->GetReturnUrl());
+            echo "
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Installation Success</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    margin-top: 20%;
+                }
+                .message {
+                    font-size: 24px;
+                    color: green;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='message'>Installation successful! You will be redirected shortly.</div>
+            <script>
+                setTimeout(function(){
+                    window.location.href = '" . $this->GetCredential()->GetReturnUrl() . "';
+                }, 3000); 
+            </script>
+        </body>
+        </html>";
             header('HTTP/1.1 200 OK', true, 200);
             die(200);
-
         } catch (\Exception $oEx) {
             Log::WriteStartCall(__FILE__);
             Log::Write('Install', 'ERROR', 'HTTP/1.1 500 Internal Server Error. ' . $oEx->getMessage());

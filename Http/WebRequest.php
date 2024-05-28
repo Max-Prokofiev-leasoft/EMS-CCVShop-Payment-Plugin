@@ -161,6 +161,12 @@ class WebRequest
      * @return string
      * @throws InvalidApiResponse
      */
+    /**
+     * Makes a POST request to the REST API
+     *
+     * @return string
+     * @throws InvalidApiResponse
+     */
     public function Post()
     {
         #HTTP method in uppercase (ie: GET, POST, PATCH, DELETE)
@@ -169,14 +175,14 @@ class WebRequest
 
         #Creating the hash
         $sHashString = implode(
-              '|',
-              array(
-                    $this->GetPublicKey(),
-                    $sMethod,
-                    $this->GetApiResource(),
-                    $this->GetData(),
-                    $sTimeStamp,
-              )
+            '|',
+            array(
+                $this->GetPublicKey(),
+                $sMethod,
+                $this->GetApiResource(),
+                $this->GetData(),
+                $sTimeStamp,
+            )
         );
 
         $sHash = hash_hmac('sha512', $sHashString, $this->GetSecretKey());
@@ -190,14 +196,14 @@ class WebRequest
         curl_setopt($rCurlHandler, CURLOPT_SSL_VERIFYHOST, 0);
 
         curl_setopt(
-              $rCurlHandler,
-              CURLOPT_HTTPHEADER,
-              array(
-                    "x-date: " . $sTimeStamp,
-                    "x-hash: " . $sHash,
-                    "x-public: " . $this->GetPublicKey(),
-                    "Content-Type: text/json",
-              )
+            $rCurlHandler,
+            CURLOPT_HTTPHEADER,
+            array(
+                "x-date: " . $sTimeStamp,
+                "x-hash: " . $sHash,
+                "x-public: " . $this->GetPublicKey(),
+                "Content-Type: text/json",
+            )
         );
         $sOutput = curl_exec($rCurlHandler);
 
@@ -208,14 +214,14 @@ class WebRequest
 
         if (!in_array($iHTTPCode, array(200, 201))) {
             Log::Write(
-                  'WebRequest',
-                  'POST::ERROR',
-                  'HttpCode was ' . $iHTTPCode . '. Expected 200|201 on [POST] ' . $this->GetApiRoot(
-                  ) . $this->GetApiResource() . '. Response: ' . $sOutput
+                'WebRequest',
+                'POST::ERROR',
+                'HttpCode was ' . $iHTTPCode . '. Expected 200|201 on [POST] ' . $this->GetApiRoot(
+                ) . $this->GetApiResource() . '. Response: ' . $sOutput
             );
             throw new InvalidApiResponse(
-                  'HttpCode was ' . $iHTTPCode . '. Expected 200|201 on [POST] ' . $this->GetApiRoot(
-                  ) . $this->GetApiResource()
+                'HttpCode was ' . $iHTTPCode . '. Expected 200|201 on [POST] ' . $this->GetApiRoot(
+                ) . $this->GetApiResource()
             );
         }
         return $sOutput;
@@ -393,6 +399,11 @@ class WebRequest
         return $this->Data;
     }
 
+    /**
+     * The data that is being posted to the resource (only with POST or PATCH methods)
+     *
+     * @param string $Data
+     */
     /**
      * The data that is being posted to the resource (only with POST or PATCH methods)
      *

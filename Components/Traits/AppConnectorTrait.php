@@ -47,7 +47,6 @@ trait AppConnectorTrait
         $oData = JsonSerializer::DeSerialize(@file_get_contents('php://input'));
 
         $this->Credential = new Credential($oData);
-
         Data_Credential::Insert($this->Credential);
 
         Log::Write(__FUNCTION__, 'END');

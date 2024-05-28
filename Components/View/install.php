@@ -27,13 +27,13 @@ if (!$ginger_api_key) {
 
         <?php foreach ($paymentMethods as $oPaymethod) {
             echo '<span style="display: inline-block; width: 75px;">';
-            echo sprintf('<img src="%s" style="width: 50px; padding: 7px 0" /> ',$oPaymethod->icon);
+            echo sprintf('<img src="%s" style="width: 50px; padding: 7px 0" /> ', $oPaymethod->icon);
             echo '</span>';
             echo $oPaymethod->name;
             echo '<br />';
         } ?>
 
-        <form action="<?php echo BankConfig::AppInstallUri; ?>" method="post">
+        <form action="<?php echo BankConfig::AppInstallUri; ?>" method="post" onsubmit="showInstallingMessage()">
             <input type="hidden" name="language" id="language" value="<?php echo $language ?>"/>
             <input type="hidden" name="api_public" id="api_public" value="<?php echo $api_public ?>"/>
             <input type="hidden" name="install_type" id="install_type" value="app_psp"/>
@@ -63,13 +63,20 @@ if (!$ginger_api_key) {
             <span style="color: #959595; font-style: italic"><?php echo $gingerTranslations['GINGER_AFTERPAYCOUNTRIESDESC']; ?></span><br>
 
             <?php if (!$ginger_api_key) { ?>
-                <button name="action" class="btn btn-success" style="margin-top: 20px"
-                        value="install"><?php echo $gingerTranslations['GINGER_INSTALLBTN']; ?></button>
+                <button id="installButton" name="action" class="btn btn-success" style="margin-top: 20px"
+                        value="install">Install</button>
             <?php } else { ?>
-                <button name="action" class="btn btn-success" style="margin-top: 20px" value='update'>Save</button>
+                <button id="saveButton" name="action" class="btn btn-success" style="margin-top: 20px" value='update'>Save</button>
             <?php } ?>
         </form>
+        <div id="installingMessage" style="display: none; color: green; margin-top: 10px;">Plugin installing...</div>
     </div>
 </div>
+
+<script>
+    function showInstallingMessage() {
+        document.getElementById('installingMessage').style.display = 'block';
+    }
+</script>
 </body>
 </html>

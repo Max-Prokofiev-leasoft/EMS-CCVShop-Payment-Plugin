@@ -13,7 +13,7 @@ class AppConfig
      * This Uri is used in the update schema example
      * Note: Remove possible trailing slashes.
      */
-    const AppUri = 'https://www.magento2.gingerplugins.nl';
+    const AppUri = 'https://rude-lions-rule.loca.lt';
 
     /**
      * This contains a secret key which is unique for this App.
@@ -47,24 +47,24 @@ class AppConfig
      * If CredentialStorageType is SQL setup the databasehost for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabaseHost = 'ID264285_gpev2ccvshop.db.hosting-cluster.nl';
+    const DatabaseHost = 'ID264285_gpeccvshop.db.hosting-cluster.nl';
 
     /**
      * If CredentialStorageType is SQL setup the databasename for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabaseName = 'ID264285_gpev2ccvshop';
+    const DatabaseName = 'ID264285_gpeccvshop';
 
     /**
      * If CredentialStorageType is SQL setup the databaseuser for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabaseUsername = 'ID264285_gpev2ccvshop';
+    const DatabaseUsername = 'ID264285_gpeccvshop';
 
     /**
      * If CredentialStorageType is SQL setup the databasepassword for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabasePassword = 'T%U6wdHSLD6MHG@qS44w';
+    const DatabasePassword = 'totGag-wibduv-7vywde';
 
 }

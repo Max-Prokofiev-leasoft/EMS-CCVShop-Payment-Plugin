@@ -24,7 +24,14 @@ class Log
         $sLog .= str_pad(strtoupper($sType), 15, ' ', STR_PAD_LEFT) . ' - '; #Type of log
         $sLog .= '[' . $sValue . ']'; #Value of the action
         $sLog .= "\r\n"; #EOL
-        fwrite(static::OpenFile($ginger_log), $sLog);
+        $logFile = static::OpenFile($ginger_log);
+
+        if ($logFile) {
+            fwrite($logFile, $sLog);
+        } else {
+            // Handle error if the log file could not be opened
+            error_log("Unable to open log file.");
+        }
     }
 
     public static function WriteStartCall($sFile = '', $ginger_log = false)
@@ -35,7 +42,14 @@ class Log
     public static function WriteEndCall($sFile = '', $ginger_log = false)
     {
         static::Write('END CALL', '', $sFile, $ginger_log);
-        fwrite(static::OpenFile($ginger_log), "\r\n");
+        $logFile = static::OpenFile($ginger_log);
+
+        if ($logFile) {
+            fwrite($logFile, "\r\n");
+        } else {
+            // Handle error if the log file could not be opened
+            error_log("Unable to open log file.");
+        }
     }
 
     /**

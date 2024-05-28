@@ -11,3 +11,4 @@ if (empty($_POST)) {
 } else {
     $plugin_gateway->finish_install();
 }
+?>
