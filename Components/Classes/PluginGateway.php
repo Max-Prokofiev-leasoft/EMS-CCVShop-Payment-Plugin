@@ -134,8 +134,6 @@ class PluginGateway extends OrderBuilder
                 $this->Install();
             }
 
-            $this->addIssuersToIdeal();
-
             Log::Write('Install', 'OUTPUT', 'Location: ' . $this->GetCredential()->GetReturnUrl());
             Log::WriteEndCall(__FILE__);
 

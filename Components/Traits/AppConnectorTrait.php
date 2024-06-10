@@ -156,7 +156,6 @@ trait AppConnectorTrait
         $app->paymethods = $payment_collection->getPaymentCollection();
 
         $this->makeWebRequest('apps/' . $iAppId . '/apppsp/', 'POST', $app);
-        $this->addIssuersToIdeal($iAppId);
 
     }
 
