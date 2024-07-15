@@ -57,12 +57,14 @@ class FunctionalityGateway extends PluginGateway
                     'description' => $this->getOrderDescription($cart->order_number),
                     'return_url' => $cart->return_url,
                     'customer' => $this->getCustomerInfo($cart),
-                    'extra' => [
+                    'client'=> [
                         'user_agent' => $_SERVER['HTTP_USER_AGENT'],
                         'platform_name' => BankConfig::PLATFORM_NAME,
                         'platform_version' => BankConfig::PLATFORM_VERSION,
                         'plugin_name' => BankConfig::PLUGIN_NAME,
                         'plugin_version' => BankConfig::PLUGIN_VERSION,
+                    ],
+                    'extra' => [
                         'ipv4_address' => $cart->ipv4_address,
                         'webhook_url' => $cart->webhook_url,
                     ],
