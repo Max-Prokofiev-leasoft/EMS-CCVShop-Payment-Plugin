@@ -13,7 +13,7 @@ class AppConfig
      * This Uri is used in the update schema example
      * Note: Remove possible trailing slashes.
      */
-    const AppUri = 'https://large-foxes-beam.loca.lt';
+    const AppUri = 'https://shy-mammals-exist.loca.lt';
 
     /**
      * This contains a secret key which is unique for this App.
@@ -47,24 +47,24 @@ class AppConfig
      * If CredentialStorageType is SQL setup the databasehost for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabaseHost = 'ID264285_gpeccvshop.db.hosting-cluster.nl';
+    const DatabaseHost = '5.tcp.eu.ngrok.io:16733';
 
     /**
      * If CredentialStorageType is SQL setup the databasename for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabaseName = 'ID264285_gpeccvshop';
+    const DatabaseName = 'testccv';
 
     /**
      * If CredentialStorageType is SQL setup the databaseuser for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabaseUsername = 'ID264285_gpeccvshop';
+    const DatabaseUsername = 'testccv';
 
     /**
      * If CredentialStorageType is SQL setup the databasepassword for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabasePassword = 'totGag-wibduv-7vywde';
+    const DatabasePassword = 'testccv';
 
 }
