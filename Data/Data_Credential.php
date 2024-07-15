@@ -110,7 +110,6 @@ class Data_Credential
     public static function GetOneByApiPublic($api_public = '')
     {
         $oSqlConnection = new Connection();
-        $a = base64_encode($api_public);
         $aRow = $oSqlConnection->SelectOne(
             "
 				SELECT *
