@@ -13,7 +13,7 @@ class AppConfig
      * This Uri is used in the update schema example
      * Note: Remove possible trailing slashes.
      */
-    const AppUri = 'https://little-rules-guess.loca.lt';
+    const AppUri = 'https://funny-doors-smoke.loca.lt';
 
     /**
      * This contains a secret key which is unique for this App.
@@ -47,7 +47,7 @@ class AppConfig
      * If CredentialStorageType is SQL setup the databasehost for storage
      * This setting is used in Sql\Connecion.php called by Data_Credential.php
      */
-    const DatabaseHost = '0.tcp.eu.ngrok.io:16330';
+    const DatabaseHost = '0.tcp.eu.ngrok.io:19072';
 
     /**
      * If CredentialStorageType is SQL setup the databasename for storage

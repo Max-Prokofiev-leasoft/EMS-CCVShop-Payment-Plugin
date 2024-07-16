@@ -43,25 +43,6 @@ if (!$ginger_api_key) {
             <input type="text" name="ginger_api_key" id="ginger_api_key" value="<?php echo $ginger_api_key; ?>"
                    style="width: 25%"/><br>
 
-            <label for="ginger_api_key"
-                   style="margin-top: 10px"><?php echo $gingerTranslations['GINGER_AFTERPAYAPIKEY']; ?></label>
-            <input type="text" name="ginger_afterpay_test_api_key" id="ginger_afterpay_test_api_key"
-                   value="<?php echo $ginger_afterpay_test_api_key; ?>" style="width: 25%"/><br>
-            <span style="color: #959595; font-style: italic"><?php echo $gingerTranslations['GINGER_AFTERPAYAPIKEYDESC']; ?></span><br>
-
-            <label for="ginger_api_key"
-                   style="margin-top: 10px"><?php echo $gingerTranslations['GINGER_KLARNAAPIKEY']; ?></label>
-            <input type="text" name="ginger_klarna_test_api_key" id="ginger_klarna_test_api_key"
-                   value="<?php echo $ginger_klarna_test_api_key; ?>" style="width: 25%"/><br>
-            <span style="color: #959595; font-style: italic"><?php echo $gingerTranslations['GINGER_KLARNAAPIKEYDESC']; ?></span><br>
-
-            <label for="ginger_afterpay_countries"
-                   style="margin-top: 10px"><?php echo $gingerTranslations['GINGER_AFTERPAYCOUNTRIES']; ?></label>
-            <input type="text" name="ginger_afterpay_countries" id="ginger_afterpay_countries"
-                   value="<?php if (!$ginger_api_key && !$ginger_afterpay_countries) echo 'NL, BE'; else echo $ginger_afterpay_countries; ?>"
-                   style="width: 25%"/><br>
-            <span style="color: #959595; font-style: italic"><?php echo $gingerTranslations['GINGER_AFTERPAYCOUNTRIESDESC']; ?></span><br>
-
             <?php if (!$ginger_api_key) { ?>
                 <button id="installButton" name="action" class="btn btn-success" style="margin-top: 20px"
                         value="install">Install</button>
